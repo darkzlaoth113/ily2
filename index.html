@@ -1,0 +1,108 @@
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #e6e0f8;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .rain {
+            position: absolute;
+            top: -100px;
+            width: 50px;
+            height: 50px;
+            background: url('https://media.tenor.com/vQAHQFjZ_FQAAAAi/may-the4th-dance.gif') no-repeat center center;
+            background-size: contain;
+            animation: rain 5s linear infinite;
+        }
+        @keyframes rain {
+            0% {
+                top: -100px;
+                opacity: 1;
+            }
+            100% {
+                top: 100vh;
+                opacity: 0;
+            }
+        }
+        .random-popup {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('https://media.tenor.com/mMr6S-_lnaYAAAAi/heart-love.gif') no-repeat center center;
+            background-size: contain;
+            animation: random-popup 5s linear infinite;
+        }
+        @keyframes random-popup {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+                top: 50%;
+                left: 50%;
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+                top: calc(100% * var(--random-top));
+                left: calc(100% * var(--random-left));
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+                top: 50%;
+                left: 50%;
+            }
+        }
+        @media (max-width: 768px) {
+            .rain {
+                width: 70px;
+                height: 70px;
+            }
+            .random-popup {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/456704239_1186672392548459_6921534848842269146_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=aIxadOFk-AQQ7kNvgEyiv_1&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QHRoWA47rOVyxv_4LxDMedF8WAxzawPJ1Xq2Riz1YhmGQ&oe=67005058" alt="A placeholder image of a person">
+    <div class="rain" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="rain" style="left: 20%; animation-delay: 1.5s;"></div>
+    <div class="rain" style="left: 30%; animation-delay: 0.5s;"></div>
+    <div class="rain" style="left: 40%; animation-delay: 2s;"></div>
+    <div class="rain" style="left: 50%; animation-delay: 1s;"></div>
+    <div class="rain" style="left: 60%; animation-delay: 2.5s;"></div>
+    <div class="rain" style="left: 70%; animation-delay: 0.3s;"></div>
+    <div class="rain" style="left: 80%; animation-delay: 1.8s;"></div>
+    <div class="rain" style="left: 90%; animation-delay: 0.7s;"></div>
+    <div class="random-popup" style="--random-top: 0.1; --random-left: 0.1; animation-delay: 0s;"></div>
+    <div class="random-popup" style="--random-top: 0.2; --random-left: 0.3; animation-delay: 1s;"></div>
+    <div class="random-popup" style="--random-top: 0.3; --random-left: 0.5; animation-delay: 2s;"></div>
+    <div class="random-popup" style="--random-top: 0.4; --random-left: 0.7; animation-delay: 3s;"></div>
+    <div class="random-popup" style="--random-top: 0.5; --random-left: 0.9; animation-delay: 4s;"></div>
+    <div class="random-popup" style="--random-top: 0.6; --random-left: 0.2; animation-delay: 5s;"></div>
+    <div class="random-popup" style="--random-top: 0.7; --random-left: 0.4; animation-delay: 6s;"></div>
+    <div class="random-popup" style="--random-top: 0.8; --random-left: 0.6; animation-delay: 7s;"></div>
+    <div class="random-popup" style="--random-top: 0.9; --random-left: 0.8; animation-delay: 8s;"></div>
+    <div class="random-popup" style="--random-top: 0.15; --random-left: 0.15; animation-delay: 0.5s;"></div>
+    <div class="random-popup" style="--random-top: 0.25; --random-left: 0.35; animation-delay: 1.5s;"></div>
+    <div class="random-popup" style="--random-top: 0.35; --random-left: 0.55; animation-delay: 2.5s;"></div>
+    <div class="random-popup" style="--random-top: 0.45; --random-left: 0.75; animation-delay: 3.5s;"></div>
+    <div class="random-popup" style="--random-top: 0.55; --random-left: 0.95; animation-delay: 4.5s;"></div>
+    <div class="random-popup" style="--random-top: 0.65; --random-left: 0.25; animation-delay: 5.5s;"></div>
+    <div class="random-popup" style="--random-top: 0.75; --random-left: 0.45; animation-delay: 6.5s;"></div>
+    <div class="random-popup" style="--random-top: 0.85; --random-left: 0.65; animation-delay: 7.5s;"></div>
+    <div class="random-popup" style="--random-top: 0.95; --random-left: 0.85; animation-delay: 8.5s;"></div>
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/-fmygFcDejk?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</body>
+</html>
