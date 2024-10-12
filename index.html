@@ -5,13 +5,19 @@
         body {
             margin: 0;
             height: 100vh;
-            background: url('https://raw.githubusercontent.com/darkzlaoth113/ily2/refs/heads/main/ily.jpg') no-repeat center center;
-            background-size: cover;
+            background-color: #e6a1e6; /* Pembe arka plan */
             overflow: hidden;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .photo {
+            width: 90%; /* Geniş ekranlar için */
+            max-width: 400px; /* Maksimum genişlik */
+            height: auto;
+            border-radius: 10px; /* Kenarları yuvarlat */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Hafif gölge */
         }
         .rain {
             position: absolute;
@@ -61,6 +67,9 @@
             }
         }
         @media (max-width: 768px) {
+            .photo {
+                width: 80%; /* Mobil cihazlar için genişliği ayarla */
+            }
             .rain {
                 width: 70px;
                 height: 70px;
@@ -73,6 +82,7 @@
     </style>
 </head>
 <body>
+    <img class="photo" src="https://raw.githubusercontent.com/darkzlaoth113/ily2/refs/heads/main/ily.jpg" alt="Onun fotoğrafı">
     <div class="rain" style="left: 10%; animation-delay: 0s;"></div>
     <div class="rain" style="left: 20%; animation-delay: 1.5s;"></div>
     <div class="rain" style="left: 30%; animation-delay: 0.5s;"></div>
