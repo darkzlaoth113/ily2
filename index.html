@@ -1,32 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ilyfalan</title>
     <style>
         body {
             margin: 0;
             height: 100vh;
-            background-color: #e6a1e6; /* Pembe arka plan */
+            background-color: #e6a1e6; /* Pembe bir arka plan oluşturdum, belki ily sever. */
             overflow: hidden;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: url('https://media.tenor.com/MVVfC-uOgJUAAAAi/heart-hearts.gif'), auto; /* Eğlenceli bir fare imleci ekledim! */
         }
         .photo {
-            width: 90%; /* Geniş ekranlar için */
-            max-width: 400px; /* Maksimum genişlik */
+            width: 90%; /* Mobil uyumlu olması için genişliği ayarladım */
+            max-width: 400px; /* Resmin maksimum genişliğini 400px ile sınırladım */
             height: auto;
-            border-radius: 10px; /* Kenarları yuvarlat */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+            border: 5px solid #ffcccc; /* Tatlı pembe bir çerçeve ile çevreledim */
+            border-radius: 50%; /* Resmi yuvarlak yaparak daha şirin hale getirdim */
+            padding: 10px; /* Biraz boşluk bıraktım */
+            background-color: #fff; /* Arka planda beyaz bir zemin ekledim */
+            box-shadow: 0 0 15px rgba(255, 182, 193, 0.5); /* Hafif bir gölge efekti ile derinlik kazandırdım */
         }
         .rain {
             position: absolute;
             top: -100px;
             width: 50px;
             height: 50px;
-            background: url('https://media.tenor.com/vQAHQFjZ_FQAAAAi/may-the4th-dance.gif') no-repeat center center;
+            background: url('https://media.tenor.com/vQAHQFjZ_FQAAAAi/may-the4th-dance.gif') no-repeat center center; /* Yağmur efekti için güzel bir gif kullandım */
             background-size: contain;
-            animation: rain 5s linear infinite;
+            animation: rain 5s linear infinite; /* Sürekli bir yağmur etkisi verdim */
         }
         @keyframes rain {
             0% {
@@ -35,16 +42,16 @@
             }
             100% {
                 top: 100vh;
-                opacity: 0;
+                opacity: 0; /* Yağmur damlalarının kaybolmasını sağladım */
             }
         }
         .random-popup {
             position: absolute;
             width: 100px;
             height: 100px;
-            background: url('https://media.tenor.com/mMr6S-_lnaYAAAAi/heart-love.gif') no-repeat center center;
+            background: url('https://media.tenor.com/mMr6S-_lnaYAAAAi/heart-love.gif') no-repeat center center; /* Rastgele çıkan kalp animasyonu */
             background-size: contain;
-            animation: random-popup 5s linear infinite;
+            animation: random-popup 5s linear infinite; /* Sürekli olarak havada süzülen kalpler */
         }
         @keyframes random-popup {
             0% {
@@ -66,23 +73,54 @@
                 left: 50%;
             }
         }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('https://media.tenor.com/MVVfC-uOgJUAAAAi/heart-hearts.gif') no-repeat center center; /* Kalp animasyonu için gif */
+            background-size: contain;
+            animation: floatUp 3s ease-in-out infinite; /* Kalplerin yukarı doğru süzülmesini sağladım */
+        }
+        @keyframes floatUp {
+            0% {
+                bottom: 0;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 100vh;
+                opacity: 0; /* Kalplerin yukarıya doğru kaybolmasını sağladım */
+            }
+        }
+        .bubble {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 182, 193, 0.5); /* Baloncuk efekti için yarı şeffaf pembe */
+            border-radius: 50%;
+            animation: floatUp 6s ease-in-out infinite; /* Baloncukların yavaşça yukarı çıkmasını sağladım */
+        }
         @media (max-width: 768px) {
             .photo {
-                width: 80%; /* Mobil cihazlar için genişliği ayarla */
+                width: 80%; /* Mobil cihazlar için genişliği ayarladım */
             }
             .rain {
                 width: 70px;
-                height: 70px;
+                height: 70px; /* Mobilde daha büyük yağmur damlaları */
             }
             .random-popup {
                 width: 150px;
-                height: 150px;
+                height: 150px; /* Mobilde daha büyük kalp animasyonları */
             }
         }
     </style>
 </head>
 <body>
     <img class="photo" src="https://raw.githubusercontent.com/darkzlaoth113/ily2/refs/heads/main/ily.jpg" alt="Onun fotoğrafı">
+    
+    <!-- Yağan gifler -->
     <div class="rain" style="left: 10%; animation-delay: 0s;"></div>
     <div class="rain" style="left: 20%; animation-delay: 1.5s;"></div>
     <div class="rain" style="left: 30%; animation-delay: 0.5s;"></div>
@@ -92,15 +130,21 @@
     <div class="rain" style="left: 70%; animation-delay: 0.3s;"></div>
     <div class="rain" style="left: 80%; animation-delay: 1.8s;"></div>
     <div class="rain" style="left: 90%; animation-delay: 0.7s;"></div>
-    <div class="random-popup" style="--random-top: 0.1; --random-left: 0.1; animation-delay: 0s;"></div>
-    <div class="random-popup" style="--random-top: 0.2; --random-left: 0.3; animation-delay: 1s;"></div>
-    <div class="random-popup" style="--random-top: 0.3; --random-left: 0.5; animation-delay: 2s;"></div>
-    <div class="random-popup" style="--random-top: 0.4; --random-left: 0.7; animation-delay: 3s;"></div>
-    <div class="random-popup" style="--random-top: 0.5; --random-left: 0.9; animation-delay: 4s;"></div>
-    <div class="random-popup" style="--random-top: 0.6; --random-left: 0.2; animation-delay: 5s;"></div>
-    <div class="random-popup" style="--random-top: 0.7; --random-left: 0.4; animation-delay: 6s;"></div>
-    <div class="random-popup" style="--random-top: 0.8; --random-left: 0.6; animation-delay: 7s;"></div>
-    <div class="random-popup" style="--random-top: 0.9; --random-left: 0.8; animation-delay: 8s;"></div>
+    
+    <!-- Rastgele kalpler -->
+    <div class="heart" style="left: 15%; animation-delay: 0s;"></div>
+    <div class="heart" style="left: 25%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 35%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 45%; animation-delay: 3s;"></div>
+    
+    <!-- Baloncuk efekti -->
+    <div class="bubble" style="left: 5%; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 15%; animation-delay: 2s;"></div>
+    <div class="bubble" style="left: 25%; animation-delay: 4s;"></div>
+    <div class="bubble" style="left: 35%; animation-delay: 6s;"></div>
+    <div class="bubble" style="left: 45%; animation-delay: 8s;"></div>
+    
+    <!-- YouTube müzik -->
     <iframe width="0" height="0" src="https://www.youtube.com/embed/-fmygFcDejk?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </body>
 </html>
