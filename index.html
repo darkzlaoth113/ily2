@@ -14,6 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            cursor: pointer; /* Kullanıcıyı müziği başlatmaya teşvik et */
         }
         .photo {
             width: 90%; /* Geniş ekranlar için */
@@ -69,6 +70,20 @@
                 left: 50%;
             }
         }
+        .play-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #ffcccc;
+            border: none;
+            border-radius: 20px;
+            font-size: 1em;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: none;
+        }
         @media (max-width: 768px) {
             .photo {
                 width: 80%; /* Mobil cihazlar için genişliği ayarla */
@@ -86,6 +101,8 @@
 </head>
 <body>
     <img class="photo" src="https://raw.githubusercontent.com/darkzlaoth113/ily2/refs/heads/main/ily.jpg" alt="Onun fotoğrafı">
+    
+    <!-- Yağan gifler -->
     <div class="rain" style="left: 10%; animation-delay: 0s;"></div>
     <div class="rain" style="left: 20%; animation-delay: 1.5s;"></div>
     <div class="rain" style="left: 30%; animation-delay: 0.5s;"></div>
@@ -95,6 +112,7 @@
     <div class="rain" style="left: 70%; animation-delay: 0.3s;"></div>
     <div class="rain" style="left: 80%; animation-delay: 1.8s;"></div>
     <div class="rain" style="left: 90%; animation-delay: 0.7s;"></div>
+    
     <div class="random-popup" style="--random-top: 0.1; --random-left: 0.1; animation-delay: 0s;"></div>
     <div class="random-popup" style="--random-top: 0.2; --random-left: 0.3; animation-delay: 1s;"></div>
     <div class="random-popup" style="--random-top: 0.3; --random-left: 0.5; animation-delay: 2s;"></div>
@@ -104,6 +122,24 @@
     <div class="random-popup" style="--random-top: 0.7; --random-left: 0.4; animation-delay: 6s;"></div>
     <div class="random-popup" style="--random-top: 0.8; --random-left: 0.6; animation-delay: 7s;"></div>
     <div class="random-popup" style="--random-top: 0.9; --random-left: 0.8; animation-delay: 8s;"></div>
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/HDEk8TIsKas?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> <!-- Şarkı değiştirildi -->
+    
+    <!-- Play Button -->
+    <button class="play-button" onclick="playMusic()">Müziği Başlat</button>
+    
+    <iframe id="music" width="0" height="0" src="https://www.youtube.com/embed/HDEk8TIsKas" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
+    <script>
+        // Kullanıcı dokunduğunda müziği oynat
+        function playMusic() {
+            const music = document.getElementById("music");
+            music.src += "?autoplay=1";
+            document.querySelector(".play-button").style.display = "none"; // Düğmeyi gizle
+        }
+        
+        // Mobil cihazlar için kullanıcı etkileşimi gerektiren bir çözüm
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            document.querySelector(".play-button").style.display = "block";
+        }
+    </script>
 </body>
 </html>
